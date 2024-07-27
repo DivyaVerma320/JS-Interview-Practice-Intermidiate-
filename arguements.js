@@ -10,19 +10,19 @@ Answer: First convert arguments to an array by calling slice method on an array 
         arguments. After that simply use indexOf.
 */
 
-function isTopassed () {
+function isToPassed () {
     var args = Array.prototype.slice.call(arguments);
     //let args = Array.from(arguments);
     return args.indexOf(2) != -1;
 };
 
-var isTo = isTopassed(1,2,4);
+var isTo = isToPassed(1,2,4);
 console.log(isTo);
 
 // //OR, With Rest Parameter, we don't have to transform into an array.
 
-function isTooPassed (...argst){
-    return argst.indexOf(3) != -1
+function isTooPassed (...args){
+    return args.indexOf(5) != -1
 };
 
 var isToo = isTooPassed(1,2,4);

@@ -13,7 +13,12 @@ function log(...args) {
     //console.log.apply(this, args);// same o/p
 };
 
-log('verma');
+log('verma', 'Al');
+
+/**
+ * Each element in the array is passed as a separate argument to console.log,
+ *  and console.log prints them out, separated by spaces:
+ */
 
 
 

@@ -6,7 +6,7 @@ Answer: You could use poor man's memoization with a global variable. If fibonacc
         calculated it is served from the global memo array otherwise it is calculated.
 */
 
-//????---Write fibonacci func with Memoiazation?--->if asked to improve the approach 
+//????---Write fibonacci func with Memoization?--->if asked to improve the approach 
 //for Fibonaaci:
 
 let memo = {0: 0, 1: 1};
@@ -21,8 +21,8 @@ function _fibanocci(n){
     }
     return value
 };
-console.log(_fibanocci(3));
-
+console.log('fib',_fibanocci(3));
+//f(0): 0, f(1): 1, f(2): 1, f(3): 2, f(4): 3, f(5): 5, f(6): 8
 //----------------------------------------------------------------------    
 
 //-----------------------Approach 2(using while loop)------------------------------------------
@@ -53,7 +53,7 @@ console.log(_fibanocci(3));
 const arr = [];
 function fibonacci(num){
     arr.push(num);
-    console.log(arr);
+    // console.log(arr);
     if(num === 0 || num === 1){
         return num;
     } else {
@@ -61,7 +61,7 @@ function fibonacci(num){
     }
 };
 
-console.log(fibonacci(5))
+// console.log(fibonacci(5))
 
 
 /*

@@ -11,26 +11,29 @@ not equal. OR, you will check each property whether they have the same value. If
 properties have same value, they are equal.
   
 *NOTE--
-Object.keys()=>To get the list of properties
+Object.keys()=>To get the list of properties(keys)
         
  */
 function isEqual(obj1, obj2){
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
-  if(keys1.length === keys2.length){
-    return true;
+  if(keys1.length !== keys2.length){
+    return false;
   }
   for(const key of keys1){
-    if(obj1[key] === obj2[key]){
-      return true;
+    if(obj1[key] !== obj2[key]){
+      return false;
     }
   } 
-  return false;
+  return true;
 }
   const num1 = {
-    A: "a"
+   A: "a",
+    B: "b",
+    C : "c",
   };
   const num2 = {
+    A: "a",
    C: "c",
    B: "b"
   };

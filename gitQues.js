@@ -3,7 +3,7 @@ function sayHi () {
     console.log(me);// undefined, because of hoisting
     console.log(you);
     /*ReferenceError, When we try to access the variables before they are declared. Variables 
-    with the let keyword (and const) are hoisted, but unlike var, don't get initialized.*/
+    with the let keyword (and const) are hoisted, but unlike var, don't get initialized and declared.*/
     var me = 'Divya';
     let you = 'Deebu';
 }
@@ -24,9 +24,16 @@ for(let i=0; i<3; i++){
      and each value is scoped inside the loop.
      */
 }
+//---Solving the above problem with IIFE
+for(var i=0; i<3; i++){
+  (function(i){
+    setTimeout(() =>{console.log(i)}, 1);
+  })(i)
+  // O/P= 0,1,2
+}
 
 //------------------------------
-//"use strict"
+// "use strict"
 let greetings;
 greetngs = {};
 console.log(greetngs);

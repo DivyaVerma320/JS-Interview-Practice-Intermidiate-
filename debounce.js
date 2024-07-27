@@ -23,8 +23,9 @@ function fn(value){
 const val= debounce(fn, 1000);
 const val2 = debounce(fn, 2000);
 val('hi')
-val2('hiiii');
+// val2('hiiii');
 val('h');
+// val2('hiiii');
 
 
 

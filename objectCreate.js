@@ -16,6 +16,7 @@ customObj.price = 15;
 
 delete customObj.price;
 console.log(customObj.getPrice());
+console.log(obj1.getPrice());
 
 
 /*When you are assigning some value to customObject.price, you are creating a new property 

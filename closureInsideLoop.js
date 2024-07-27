@@ -5,7 +5,7 @@ Question[14]: you have a for loop if you have setTimeout inside it. If log the l
 
 for(var i=0; i<10; i++){
     setTimeout(function(){
-        console.log(i);//O/P=> 10 10 times/ NOT 0,1,2,....,9
+        // console.log(i);//O/P=> 10 10 times/ NOT 0,1,2,....,9
     }, i)
 };
 
@@ -21,7 +21,7 @@ Explanation: The console log is inside the anonymous function of setTimeout and 
 
 for(let i = 0; i < 10; i++) {
     setTimeout((function() {
-      console.log(i);//o/p : 0,1,2,....,9
+      console.log(i);//o/p : 0,1,2,....,9ß
     }), 1000*i)
 }
 

@@ -9,12 +9,12 @@ Answer: The bind() takes an object as an argument and returns a new function who
 let monica = {
         name: 'Monica',
         total: 1000,
-        deductMontlyFee: function(fee){
+        deductMonthlyFee: function(fee, fee2){
             this.total = this.total - fee
-            console.log(`${this.name} remaining balnc is ${this.total}`);
+        //     console.log(`${this.name} remaining Blanc is ${this.total} ${fee2}`);
         }
 };
-monica.deductMontlyFee(100);
+monica.deductMonthlyFee(100, 300);
 
 let rachel = {
         name: 'Rachel',
@@ -23,15 +23,38 @@ let rachel = {
 
 Function.prototype.myBind = function(obj,...arg){
         return () => {
-                this.apply(obj, arg);
+                console.log('this', this, obj)
+                this.apply(obj, [...arg]);
                 //this.apply= monica
                 //the arrow func shares the lexical 'this' keyword of its surroundings
         }
 }
 
-let RachelDeductMontlyFee = monica.deductMontlyFee.myBind(rachel, 200);
-RachelDeductMontlyFee();
+let RachelDeductMonthlyFee = monica.deductMonthlyFee.myBind(rachel, 200, 100);
+// let RachelDeductMonthlyFee = monica.deductMonthlyFee.bind(rachel, 100)
+RachelDeductMonthlyFee();
 
+let obj = {
+        name: 'Jack',
+
+      };
+      
+      let myFunc = function () {
+        console.log(`${this.name}`);
+      };
+      
+      Function.prototype.myBind = function (obj) {
+        
+        let func = this;
+        console.log('this', func)
+        return function () {
+
+                func.apply(obj);
+        };
+      };
+      
+      let newFunc = myFunc.myBind(obj)
+      newFunc() // Jack
 
 
 

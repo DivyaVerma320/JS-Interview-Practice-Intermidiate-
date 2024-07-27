@@ -1,6 +1,6 @@
 //-----------------------------------Sleep func----------------------------------------
 // Create a sleep function that takes one parameter (time) and
-// will wait "time" ms. See the below example:
+// will wait for "time" ms. See the below example:
 
 const sleep = (time) => {
     return new Promise((res, rej) =>{
@@ -12,20 +12,21 @@ const sleep = (time) => {
 
 async function consume(){
     const result = await sleep(100);
-    console.log(result);
+    console.log('result',result);
     let newVal = 'D2 ' + result;
     console.log(newVal);
+    //------------other way to consume promises-------
+
+// sleep(100).then((res) =>{
+//     console.log(res);
+//     let newVal = 'D2 ' + res;
+//     return newVal;
+// }).then((res2) =>{
+//     console.log(res2);
+// })
+
 }
 consume();
-//------------other way to consume promises-------
-
-/*sleep(100).then((res) =>{
-    console.log(res);
-    let newVal = 'D2 ' + res;
-    return newVal;
-}).then((res2) =>{
-    console.log(res2);
-})*/
 
 //NOTE=>
 /*When we pass multiple promises to the Promise.race method, it resolves/rejects the first

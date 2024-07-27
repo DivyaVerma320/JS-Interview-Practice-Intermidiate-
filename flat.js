@@ -7,15 +7,15 @@ function flatten (arr){
         method returns a single value: the function's accumulated result. The reduce() 
         method does not execute the function for empty array elements.
         */
-        console.log(acc);
-        console.log(init);
+        // console.log(acc);
+        // console.log(init);
         if(Array.isArray(init)){
         //The Array.isArray() static method determines whether the passed value is an Array.
             acc = acc.concat(flatten(init));
-            //console.log(acc + ' Local');
+            console.log(acc + ' Local');
         }else {
             acc.push(init);
-            //console.log(acc + ' Rev');
+            // console.log(acc + ' Rev');
         }
         return acc;
     }, [])
@@ -27,6 +27,6 @@ console.log(flatten([1,2,[3,4, [5,6,7], 8], 9, 10]))
 
  var twoDimension = [[1], [2], 3, 4, [5]];
  var plano = twoDimension.reduce((acc, el) => acc.concat(el), []);
- console.log(plano);
+//  console.log(plano);
  
 
