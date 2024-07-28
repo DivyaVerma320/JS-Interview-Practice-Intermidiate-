@@ -11,7 +11,7 @@ let monica = {
         total: 1000,
         deductMonthlyFee: function(fee, fee2){
             this.total = this.total - fee
-        //     console.log(`${this.name} remaining Blanc is ${this.total} ${fee2}`);
+            console.log(`${this.name} remaining Blanc is ${this.total} ${fee2}`);
         }
 };
 monica.deductMonthlyFee(100, 300);
@@ -46,7 +46,7 @@ let obj = {
       Function.prototype.myBind = function (obj) {
         
         let func = this;
-        console.log('this', func)
+        // console.log('this', func)
         return function () {
 
                 func.apply(obj);
