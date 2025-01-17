@@ -6,24 +6,25 @@ Answer: You could use poor man's memoization with a global variable. If fibonacc
         calculated it is served from the global memo array otherwise it is calculated.
 */
 
-//????---Write fibonacci func with Memoization?--->if asked to improve the approach 
+//????---Write fibonacci func with Memoization?--->if asked to improve the approach
 //for Fibonaaci:
 
-let memo = {0: 0, 1: 1};
+let memo = { 0: 0, 1: 1 };
 let value;
-function _fibanocci(n){
-    if(n in memo){
-        console.log(memo)
-        return memo[n];
-    } else {
-        value = _fibanocci(n-1) + _fibanocci(n-2);
-        memo[n]= value
-    }
-    return value
-};
-console.log('fib',_fibanocci(3));
+function _fibanocci(n) {
+  if (n in memo) {
+    console.log(memo);
+    return memo[n];
+  } else {
+    value = _fibanocci(n - 1) + _fibanocci(n - 2);
+    memo[n] = value;
+  }
+  return value;
+}
+
+console.log("fib", _fibanocci(3));
 //f(0): 0, f(1): 1, f(2): 1, f(3): 2, f(4): 3, f(5): 5, f(6): 8
-//----------------------------------------------------------------------    
+//----------------------------------------------------------------------
 
 //-----------------------Approach 2(using while loop)------------------------------------------
 // const number = parseInt(prompt('Enter a positive number: '));
@@ -46,23 +47,21 @@ console.log('fib',_fibanocci(3));
 // }
 // //-------------------------------------------------------------------------
 
-
 // //-----------------Write a fibonacci(0112358....) func?--------------------
 // //-------------------------Approach 1(using Recursion)-------------------------
 
 const arr = [];
-function fibonacci(num){
-    arr.push(num);
-    // console.log(arr);
-    if(num === 0 || num === 1){
-        return num;
-    } else {
-        return fibonacci(num - 1) + fibonacci(num - 2);
-    }
-};
+function fibonacci(num) {
+  arr.push(num);
+  // console.log(arr);
+  if (num === 0 || num === 1) {
+    return num;
+  } else {
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
+}
 
-// console.log(fibonacci(5))
-
+console.log(fibonacci(5));
 
 /*
                                       5

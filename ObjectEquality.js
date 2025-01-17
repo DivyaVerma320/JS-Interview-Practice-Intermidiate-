@@ -14,34 +14,33 @@ properties have same value, they are equal.
 Object.keys()=>To get the list of properties(keys)
         
  */
-function isEqual(obj1, obj2){
+function isEqual(obj1, obj2) {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
-  if(keys1.length !== keys2.length){
+  console.log("Keys,", keys1, keys2);
+  if (keys1.length !== keys2.length) {
     return false;
   }
-  for(const key of keys1){
-    if(obj1[key] !== obj2[key]){
+  for (const key of keys1) {
+    if (obj1[key] !== obj2[key]) {
       return false;
     }
-  } 
+  }
   return true;
 }
-  const num1 = {
-   A: "a",
-    B: "b",
-    C : "c",
-  };
-  const num2 = {
-    A: "a",
-   C: "c",
-   B: "b"
-  };
 
- const objEq =  isEqual(num1, num2);
- console.log(objEq);
+const num1 = {
+  A: "a",
+  B: "b",
+  C: "c",
+};
+const num2 = {
+  A: "a",
+  C: "c",
+  B: "b",
+};
 
- //if([]){console.log('its true')}
+const objEq = isEqual(num1, num2);
+console.log(objEq);
 
-
-
+//if([]){console.log('its true')}

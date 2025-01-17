@@ -3,29 +3,27 @@
    take place before time has elapsed.
  */
 
-function debounce (fn, time){
+function debounce(fn, time) {
   let timer;
-  return function(){
-    if(timer){
-      clearTimeout(timer)
+  return function () {
+    if (timer) {
+      clearTimeout(timer);
     }
-    timer = setTimeout(() =>{
+    timer = setTimeout(() => {
       fn.apply(this, arguments);
+      fn(...args1);
       //fn(arguments);
-    },time)
-  }
+    }, time);
+  };
 }
-/*Observe here "hi prints out only once irrespective of the no of time you invoke the passed 
+/*Observe here "hi prints out only once irrespective of the no of time you invoke the passed
 function "--------------------------------------*/
-function fn(value){
+function fn(value) {
   console.log(value);
-};
-const val= debounce(fn, 1000);
+}
+const val = debounce(fn, 1000);
 const val2 = debounce(fn, 2000);
-val('hi')
+val("hi");
 // val2('hiiii');
-val('h');
+val("h");
 // val2('hiiii');
-
-
-
