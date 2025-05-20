@@ -1,34 +1,41 @@
 //-------------------------------------
-function sayHi () {
-    console.log(me);// undefined, because of hoisting
-    console.log(you);
-    /*ReferenceError, When we try to access the variables before they are declared. Variables 
+function sayHi() {
+  console.log(me); // undefined, because of hoisting
+  console.log(you);
+  /*ReferenceError, When we try to access the variables before they are declared. Variables 
     with the let keyword (and const) are hoisted, but unlike var, don't get initialized and declared.*/
-    var me = 'Divya';
-    let you = 'Deebu';
+  var me = "Divya";
+  let you = "Deebu";
 }
 sayHi();
 
 //------------------------------------
-for(var i=0; i<3; i++){
-    setTimeout(() => {console.log(i)}, 1);
-    /*O/P= 3,3,3 Because of the event queue in JavaScript,
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1);
+  /*O/P= 3,3,3 Because of the event queue in JavaScript,
      the setTimeout callback function is called after the loop has been executed.
      By the time the setTimeout callback function was invoked, i was equal to 3*/
-};
+}
 
-for(let i=0; i<3; i++){
-    setTimeout(() =>{console.log(i)}, 1);
-    /*O/P= 0,1,2 variables declared with the let (and const) keyword are block-scoped 
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1);
+  /*O/P= 0,1,2 variables declared with the let (and const) keyword are block-scoped 
      (a block is anything between { }). During each iteration, i will have a new value,
      and each value is scoped inside the loop.
      */
 }
+
 //---Solving the above problem with IIFE
-for(var i=0; i<3; i++){
-  (function(i){
-    setTimeout(() =>{console.log(i)}, 1);
-  })(i)
+for (var i = 0; i < 3; i++) {
+  (function (i) {
+    setTimeout(() => {
+      console.log(i);
+    }, 1);
+  })(i);
   // O/P= 0,1,2
 }
 
@@ -45,10 +52,10 @@ before setting it equal to anything.
 
 //-----------------------------------
 function bark() {
-    console.log('Woof!');
-  }
-  
-bark.animal = 'dog';// because functions are objects, The function is an object with properties
+  console.log("Woof!");
+}
+
+bark.animal = "dog"; // because functions are objects, The function is an object with properties
 
 /*25. What's the output?
 const obj = { a: 'one', b: 'two', a: 'three' };
@@ -73,7 +80,7 @@ first position, but with the last specified value.
   }
   console.log(x);
   console.log(y);
-})();// 1 undefined 2
+})(); // 1 undefined 2
 
 /*
 A: 1 undefined 2
@@ -88,9 +95,8 @@ arguments. This variable x is block-scoped. Later, we set this block-scoped vari
 to 1. Outside of the catch block, x is still undefined, and y is 2. When we want to 
 console.log(x) outside of the catch block, it returns undefined, and y returns 2.*/
 
-
 const person = {
-  name: 'Lydia',
+  name: "Lydia",
   age: 21,
 };
 
@@ -110,16 +116,15 @@ item equal to the current key it’s iterating over. First, item is equal to nam
 logged. Then, item is equal to age, which gets logged.
 */
 
-
 function greeting() {
-  throw 'Hello world!';
+  throw "Hello world!";
 }
 function sayHi() {
   try {
     const data = greeting();
-    console.log('It worked!', data);
+    console.log("It worked!", data);
   } catch (e) {
-    console.log('Oh no an error:', e);
+    console.log("Oh no an error:", e);
   }
 }
 sayHi();
@@ -138,12 +143,11 @@ an exception is thrown in the try block. An exception is thrown: the string 'Hel
 e is now equal to that string, which we log. This results in 'Oh an error: Hello world!'.
 */
 
-
 // counter.js
 let counter = 10;
 export default counter;
 // index.js
-import myCounter from './counter';
+import myCounter from "./counter";
 
 myCounter += 1;
 
@@ -162,7 +166,6 @@ an error: myCounter is read-only and cannot be modified. This means that the imp
 get run first, the code in the file which imports the module gets executed after.
 */
 
-
 /*
 const obj1 = {
   name: 'verma'
@@ -171,7 +174,6 @@ const obj1 = {
 const obj2 ={ name1: 'divya', ...obj1 }//combine objects using the spread operator (...)
 console.log(obj2)// divya verma
 */
-
 
 [1, 2, 3, 4].reduce((x, y) => console.log(x, y));
 
@@ -198,8 +200,7 @@ we again don't return from the callback function. The accumulator is again undef
 the current value is 4. undefined and 4 get logged.
 */
 
-
-const myLifeSummedUp = ['☕', '💻', '🍷', '🍫'];
+const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"];
 
 for (let item in myLifeSummedUp) {
   console.log(item);
@@ -229,8 +230,8 @@ console.log(list);
 
 // 🎉✨ This is my 100th question! ✨🎉
 
-const output = `${[] && 'Im'}possible!
-You should${'' && `n't`} see a therapist after so much JavaScript lol`;
+const output = `${[] && "Im"}possible!
+You should${"" && `n't`} see a therapist after so much JavaScript lol`;
 console.log(output);
 /*
 A: possible! You should see a therapist after so much JavaScript lol

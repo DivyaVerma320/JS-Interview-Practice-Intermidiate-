@@ -21,7 +21,7 @@ Explanation: The console log is inside the anonymous function of setTimeout and 
 
 for(let i = 0; i < 10; i++) {
     setTimeout((function() {
-      console.log(i);//o/p : 0,1,2,....,9ß
+      console.log(i);//o/p : 0,1,2,....,9
     }), 1000*i)
 }
 

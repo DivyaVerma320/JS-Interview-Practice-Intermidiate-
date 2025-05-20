@@ -11,7 +11,7 @@ function debounce(fn, time) {
     }
     timer = setTimeout(() => {
       fn.apply(this, arguments);
-      fn(...args1);
+      // fn(...args1);
       //fn(arguments);
     }, time);
   };

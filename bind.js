@@ -34,6 +34,7 @@ It simply returns an exact copy of the function with new value of this. You can 
 same function with new value of this without harming the old one.
 */
 
+
 var ross = {
     name: 'Ross',
     total: 200
